@@ -43,14 +43,3 @@ export function markTodo(id, completed) {
     payload: { id, completed },
   };
 }
-
-// export function addTodo(text) {
-//   return {
-//     type: types.ADD_TODO,
-//     payload: {
-//       text,
-//       id: Date.now(),
-//       completed: false,
-//     },
-//   };
-// }
