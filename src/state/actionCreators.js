@@ -1,3 +1,4 @@
+import axios from 'axios';
 import * as types from './actionTypes';
 // STEP 7 OF THE GENERAL STEPS
 
@@ -50,6 +51,11 @@ export const markTodo = (id, completed) => {
 // it can dispatch an action of 'SET_TODOS'
 // with all of the todos from the backend
 export const getTodos = () => (dispatch) => {
-  // do stuff
-  // axios.... and we can dispatch the action once we have the todos
+  axios.get('http://localhost:4000/todoz')
+    .then(res => {
+      debugger
+    })
+    .catch(err => {
+      debugger
+    });
 };
