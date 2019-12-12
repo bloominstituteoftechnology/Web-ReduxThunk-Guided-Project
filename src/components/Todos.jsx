@@ -1,6 +1,9 @@
 import React from 'react';
+// we need a couple imports
+import { connect } from 'react-redux';
+import { markTodo } from '../state/actionCreators';
 
-export function Todos({ }) {
+export function Todos({ todos, markTodo }) {
   return (
     <div className='component'>
       {
@@ -15,3 +18,17 @@ export function Todos({ }) {
     </div>
   );
 }
+
+// we need a mapStateToProps
+function mapStateToProps(state) {
+  return {
+    todos: state.todos,
+  };
+}
+// we need a new default export
+export default connect(
+  mapStateToProps,
+  { markTodo },
+)(Todos);
+
+// don't forget to plug action creators
