@@ -1,4 +1,4 @@
-# Intro to Redux
+# Intro to Thunk and Async Redux
 
 ## How to Run this App
   * Clone repository and cd into the project folder.
