@@ -53,7 +53,11 @@ export const markTodo = (id, completed) => {
 export const getTodos = () => (dispatch) => {
   axios.get('http://localhost:4000/todos')
     .then(res => {
-      debugger
+      const todos = res.data;
+      dispatch({
+        type: types.SET_TODOS,
+        payload: todos,
+      });
     })
     .catch(err => {
       debugger
