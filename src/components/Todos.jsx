@@ -1,9 +1,12 @@
-import React from 'react';
-// we need a couple imports
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { markTodo } from '../state/actionCreators';
+import { markTodo, getTodos } from '../state/actionCreators';
 
-export function Todos({ todos, markTodo }) {
+export function Todos({ todos, markTodo, getTodos }) {
+  useEffect(() => {
+    getTodos();
+  }, []);
+
   return (
     <div className='component'>
       {
@@ -19,16 +22,13 @@ export function Todos({ todos, markTodo }) {
   );
 }
 
-// we need a mapStateToProps
 function mapStateToProps(state) {
   return {
     todos: state.todos,
   };
 }
-// we need a new default export
+
 export default connect(
   mapStateToProps,
-  { markTodo },
+  { markTodo, getTodos },
 )(Todos);
-
-// don't forget to plug action creators
