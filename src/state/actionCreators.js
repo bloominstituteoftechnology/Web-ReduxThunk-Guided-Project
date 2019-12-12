@@ -51,7 +51,7 @@ export const markTodo = (id, completed) => {
 // it can dispatch an action of 'SET_TODOS'
 // with all of the todos from the backend
 export const getTodos = () => (dispatch) => {
-  axios.get('http://localhost:4000/todoz')
+  axios.get('http://localhost:4000/todos')
     .then(res => {
       debugger
     })
