@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { combineReducers, createStore } from 'redux';
+import thunk from 'redux-thunk';
+import { combineReducers, createStore, compose, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import { countReducer, todosReducer, formReducer } from './state/reducers';
 import Todos from './components/Todos';
@@ -22,8 +23,11 @@ const monsterReducer = combineReducers({
 // STEP 5 OF THE GENERAL STEPS
 const store = createStore(
   monsterReducer,
-  // we need the second arg to enable redux devtools
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+  {},
+  compose(
+    applyMiddleware(thunk /* , , other middlewares */),
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+  ),
 );
 
 // STEP 6 OF THE GENERAL STEPS
