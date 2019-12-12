@@ -49,7 +49,7 @@ export const markTodo = (id, completed) => {
 // and when the stuff comes back from the backend
 // it can dispatch an action of 'SET_TODOS'
 // with all of the todos from the backend
-const getTodos = () => (dispatch) => {
+export const getTodos = () => (dispatch) => {
   // do stuff
   // axios.... and we can dispatch the action once we have the todos
 };
