@@ -30,12 +30,12 @@ app.get('/market/meats', (req, res) => {
   res.json(meats);
 });
 
-app.put('/todos/:id', (req, res) => {
+app.patch('/todos/:id', (req, res) => {
   todoList = todoList.map(todo => {
     if (todo.id !== req.params.id) return todo;
     return {
       ...todo,
-      completed: !todo.completed,
+      ...req.body,
     };
   });
   res.json(todoList);
