@@ -38,12 +38,12 @@ export const inputChange = (name, value) => {
   };
 };
 
-export const markTodo = (id, completed) => {
-  return {
-    type: types.MARK_TODO,
-    payload: { id, completed },
-  };
-};
+// export const markTodo = (id, completed) => {
+//   return {
+//     type: types.MARK_TODO,
+//     payload: { id, completed },
+//   };
+// };
 
 // with thunk we can create a special
 // action creator that can do axios,
@@ -62,4 +62,10 @@ export const getTodos = () => (dispatch) => {
     .catch(err => {
       debugger
     });
+};
+
+export const markTodo = (id, completed) => dispatch => {
+  axios.patch(/* url, payload */)
+  // etc
+  // etc
 };
