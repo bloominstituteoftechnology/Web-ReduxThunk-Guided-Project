@@ -35,11 +35,7 @@ export function formReducer(form = initialForm, action) {
 }
 
 // REDUCER 3 - todos
-const initialTodos = [
-  { id: '1', name: "sweeping", completed: false },
-  { id: '2', name: "mopping", completed: false },
-  { id: '3', name: "washing dishes", completed: false },
-];
+const initialTodos = [];
 export function todosReducer(todos = initialTodos, action) {
   switch (action.type) {
     case types.MARK_TODO:
