@@ -25,7 +25,7 @@ const store = createStore(
   monsterReducer,
   {},
   compose(
-    applyMiddleware(thunk /* , , other middlewares */),
+    applyMiddleware(thunk /* ,etc , other middlewares */),
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
   ),
 );
