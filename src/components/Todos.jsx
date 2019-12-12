@@ -8,7 +8,7 @@ const todoList = [
 
 export default function Todos() {
   const [todos, setTodos] = useState(todoList);
-  const markTodo = (id, isComplete) => () => {
+  const markTodo = (id, isComplete) => {
     setTodos(todos.map(todo => {
       if (todo.id !== id) return todo;
       return { id: todo.id, name: todo.name, completed: isComplete };
@@ -21,8 +21,8 @@ export default function Todos() {
         todos.map((todo) => (
           <div key={todo.id} style={{ color: !todo.completed ? 'red' : 'green' }}>
             {todo.name}
-            <button onClick={markTodo(todo.id, true)}>Mark complete</button>
-            <button onClick={markTodo(todo.id, false)}>Mark incomplete</button>
+            <button onClick={() => markTodo(todo.id, true)}>Mark complete</button>
+            <button onClick={() => markTodo(todo.id, false)}>Mark incomplete</button>
           </div>
         ))
       }
