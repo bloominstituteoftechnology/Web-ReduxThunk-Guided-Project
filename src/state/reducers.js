@@ -38,12 +38,8 @@ export function formReducer(form = initialForm, action) {
 const initialTodos = [];
 export function todosReducer(todos = initialTodos, action) {
   switch (action.type) {
-    case types.MARK_TODO:
-      return todos.map(todo => {
-        return todo.id === action.payload.id
-          ? { ...todo, completed: action.payload.completed }
-          : todo;
-      });
+    case types.SET_TODOS:
+      return action.payload;
     default:
       return todos;
   }
