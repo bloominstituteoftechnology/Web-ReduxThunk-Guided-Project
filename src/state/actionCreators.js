@@ -65,7 +65,15 @@ export const getTodos = () => (dispatch) => {
 };
 
 export const markTodo = (id, completed) => dispatch => {
-  axios.patch(/* url, payload */)
-  // etc
-  // etc
+  axios
+    .patch(`http://localhost:4000/todos/${id}`, { completed })
+    .then(response => {
+      dispatch({
+        type: types.SET_TODOS,
+        payload: response.data,
+      });
+    })
+    .catch(error => {
+      debugger;
+    });
 };
