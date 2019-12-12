@@ -11,23 +11,23 @@ import * as types from './actionTypes';
 
 // The Counter component will
 // be interested in this function!
-export function increment() {
+export const increment = () => {
   return {
     type: types.INCREMENT,
   };
-}
+};
 
-export function decrement() {
+export const decrement = () => {
   return {
     type: types.DECREMENT,
   };
-}
+};
 
-export function submit() {
+export const submit = () => {
   return { type: types.SUBMIT };
-}
+};
 
-export function inputChange(name, value) {
+export const inputChange = (name, value) => {
   return {
     type: types.INPUT_CHANGE,
     payload: {
@@ -35,11 +35,11 @@ export function inputChange(name, value) {
       value,
     },
   };
-}
+};
 
-export function markTodo(id, completed) {
+export const markTodo = (id, completed) => {
   return {
     type: types.MARK_TODO,
     payload: { id, completed },
   };
-}
+};
