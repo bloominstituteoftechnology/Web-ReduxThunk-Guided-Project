@@ -1,20 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const todoList = [
-  { id: '1', name: "sweeping", completed: false },
-  { id: '2', name: "mopping", completed: false },
-  { id: '3', name: "washing dishes", completed: false },
-];
-
-export default function Todos() {
-  const [todos, setTodos] = useState(todoList);
-  const markTodo = (id, isComplete) => {
-    setTodos(todos.map(todo => {
-      if (todo.id !== id) return todo;
-      return { id: todo.id, name: todo.name, completed: isComplete };
-    }));
-  };
-
+export function Todos({ }) {
   return (
     <div className='component'>
       {
