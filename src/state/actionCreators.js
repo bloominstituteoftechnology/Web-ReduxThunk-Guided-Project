@@ -43,3 +43,9 @@ export const markTodo = (id, completed) => {
     payload: { id, completed },
   };
 };
+
+// with thunk we can create a special
+// action creator that can do axios,
+// and when the stuff comes back from the backend
+// it can dispatch an action of 'SET_TODOS'
+// with all of the todos from the backend
